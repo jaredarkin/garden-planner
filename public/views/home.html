@@ -1,0 +1,16 @@
+<h2>List of Plants</h2>
+<div ng-controller="plantController as plantCtrl">
+  <ul>
+    <li ng-repeat="plant in plantCtrl.plants">
+      {{plant.name}}
+    </li>
+  </ul>
+</div>
+
+<div class="garden-container" ng-controller="layoutController">
+  Length: <input type="text" ng-model="userLength">
+  <!-- Width: <input type="text" ng-model="userWidth"> -->
+
+  <div class="garden-layout" ng-style="{height: userLength + 'px'}">
+  </div>
+</div>
