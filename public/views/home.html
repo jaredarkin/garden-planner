@@ -1,16 +1,30 @@
 <h2>List of Plants</h2>
-<div ng-controller="plantController as plantCtrl">
-  <ul>
-    <li ng-repeat="plant in plantCtrl.plants">
-      {{plant.name}}
-    </li>
-  </ul>
-</div>
+<div class="row">
+  <div class="col-md-5" ng-controller="plantController as plantCtrl">
+    <ul class="list-group">
+      <li class="list-group-item" ng-repeat="plant in plantCtrl.plants">
+        <span>{{plant.name}}</span>
+        <button ng-show="!showInfo" ng-click="showInfo = !showInfo">Show Info</button>
+        <button ng-show="showInfo" ng-click="showInfo = !showInfo">Hide Info</button>
+        <button>Add to Garden</button>
+        <div class="plantInfo row" ng-show="showInfo">
+          <div class="col-md-6">
+            <p>Type: {{plant.type}}</p>
+            <p>Spacing: {{plant.spacing_min}} - {{plant.spacing_max}}</p>
+            <p>Height: {{plant.height}}</p>
+          </div>
+          <div class="col-md-6 thumbnail">
+            <img src="{{plant.photo_url}}" alt="{{plant.name}}" >
+          </div>
+      </li>
+    </ul>
+  </div>
 
-<div class="garden-container" ng-controller="layoutController">
-  Length: <input type="text" ng-model="userLength">
-  <!-- Width: <input type="text" ng-model="userWidth"> -->
+  <div class="garden-container col-md-7" ng-controller="layoutController">
+    Length: <input type="text" ng-model="userLength">
+    Width: <input type="text" ng-model="userWidth">
 
-  <div class="garden-layout" ng-style="{height: userLength + 'px'}">
+    <div class="garden-layout" ng-style="{height: userLength + 'px'}">
+    </div>
   </div>
 </div>
