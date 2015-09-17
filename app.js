@@ -3,9 +3,10 @@ var app = express();
 var path = require('path');
 var mongodb = require('mongodb');
 var mongojs = require('mongojs');
-var mongoURI = process.env.MONGOLAB_URI;
+var mongoURI = "mongodb://heroku_n0ftm541:6uoc3i3grjgrfjbreicti0hkrm@ds031477.mongolab.com:31477/heroku_n0ftm541";
 var localURI = 'mongodb://localhost/garden';
 var db = mongojs( mongoURI || localURI, ['plants']);
+
 
 app.use("/", express.static(path.join(__dirname + "/public")));
 
