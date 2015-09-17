@@ -3,11 +3,9 @@ var app = express();
 var path = require('path');
 var mongodb = require('mongodb');
 var mongojs = require('mongojs');
-var db = mongojs('garden', ['plants'])
-// 
-// var uri = process.env.MONGOLAB_URI;
-// mongoURI = 'mongodb://localhost/test';
-// db.connect(process.env.MONGOLAB_URI || mongoURI);
+var mongoURI = process.env.MONGOLAB_URI;
+var localURI = 'mongodb://localhost/garden';
+var db = mongojs( mongoURI || localURI, ['plants']);
 
 app.use("/", express.static(path.join(__dirname + "/public")));
 
