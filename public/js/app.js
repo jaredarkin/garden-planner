@@ -7,6 +7,7 @@
     'plantControllers',
     'plantServices',
     'plantRouter',
-    'layoutControllers'
+    'layoutControllers',
+    'directives'
   ]);
 })()

@@ -3,7 +3,35 @@ body {
 }
 
 .garden-layout {
-  height: 250px;
-  width: 250px;
+  height: 240px;
+  width: 480px;
   border: 2px red solid;
+}
+
+/* layout image sizes based on plant spacing needs*/
+/* will convert to SASS function */
+.layout-image{
+  border-radius: 50%;
+  height: 48px;
+  width: 48px;
+}
+.spacing18{
+  height: 72px;
+  width: 72px;
+}
+.spacing12{
+  height: 48px;
+  width: 48px;
+}
+.spacing8{
+  height: 32px;
+  width: 32px;
+}
+.spacing6{
+  height: 24px;
+  width: 24px;
+}
+.spacing3{
+  height: 12px;
+  width: 12px;
 }

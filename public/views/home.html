@@ -6,7 +6,7 @@
         <span>{{plant.name}}</span>
         <button ng-show="!showInfo" ng-click="showInfo = !showInfo">Show Info</button>
         <button ng-show="showInfo" ng-click="showInfo = !showInfo">Hide Info</button>
-        <button>Add to Garden</button>
+        <addbutton></addbutton>
         <div class="plantInfo row" ng-show="showInfo">
           <div class="col-md-6">
             <p>Type: {{plant.type}}</p>
@@ -24,7 +24,7 @@
     Length: <input type="text" ng-model="userLength">
     Width: <input type="text" ng-model="userWidth">
 
-    <div class="garden-layout" ng-style="{height: userLength + 'px'}">
+    <div class="garden-layout" id="garden-layout">
     </div>
   </div>
 </div>
