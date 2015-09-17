@@ -14,10 +14,36 @@
   directives.directive('addtogarden', function($compile){
     return function(scope, element, attrs){
       element.bind("click", function(){
-        angular.element(document.getElementById('garden-layout')).append($compile('<img height='+4*scope.plant.spacing_min+' width='+4*scope.plant.spacing_min+' class="layout-image" src=' + scope.plant.photo_url + ' />')(scope));
+        angular.element(document.getElementById('garden-layout')).append($compile('<img draggable height='+4*scope.plant.spacing_min+' width='+4*scope.plant.spacing_min+' class="layout-image" src=' + scope.plant.photo_url + ' />')(scope));
       });
     };
   });
+
+  // draggable directive for images in garden
+  directives.directive('draggable', function(){
+    return {
+      restrict: 'A',
+      link: function(scope, element, attrs){
+        element.draggable({
+          // revert: true
+          containment: "parent"
+        });
+      }
+    };
+  });
+
+  // droppable directive for garden layout
+  directives.directive('droppable', function($compile){
+    return {
+      restrict: 'A',
+      link: function(scope, element, attrs){
+        element.droppable({
+          accept: "*",
+          // drop: function(event, ui){}
+        })
+      }
+    }
+  })
 
 
 })()
