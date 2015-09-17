@@ -7,11 +7,6 @@ var db = mongojs('garden', ['plants'])
 
 app.use("/", express.static(path.join(__dirname + "/public")));
 
-// connect to our database using the DB server URL.
-// mongoose.connect('mongodb://localhost/garden');
-
-
-
 app.get("/", function(request, response){
   response.sendFile(__dirname + "/index.html");
 });
@@ -23,11 +18,6 @@ app.get("/plants", function(req,res){
    res.json(response);
  });
 });
-
-
-// app.get('*', function(req, res) {
-//             res.sendfile('./public/views/index.html'); // load our public/index.html file
-//         });
 
 app.set('port', (process.env.PORT || 4000));
 

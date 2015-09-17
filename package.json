@@ -1,0 +1,26 @@
+{
+  "name": "garden-planner",
+  "version": "1.0.0",
+  "description": "MEAN stack app",
+  "main": "app.js",
+  "dependencies": {
+    "body-parser": "^1.13.3",
+    "mongoose": "^4.1.7",
+    "express": "^4.13.3",
+    "mongojs": "^1.3.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arkinjb/garden-planner.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/arkinjb/garden-planner/issues"
+  },
+  "homepage": "https://github.com/arkinjb/garden-planner#readme"
+}
