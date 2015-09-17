@@ -8,6 +8,7 @@
     'plantServices',
     'plantRouter',
     'layoutControllers',
-    'directives'
+    'directives',
+    'ui.bootstrap'
   ]);
 })()

@@ -19,14 +19,24 @@
     };
   });
 
+  // directive to remove plant image from garden
+  directives.directive('removefromgarden', function(){
+    return function(scope, element, attrs){
+
+    }
+  })
+
+  // directive to show remove button when image is clicked on
+
+
   // draggable directive for images in garden
   directives.directive('draggable', function(){
     return {
       restrict: 'A',
       link: function(scope, element, attrs){
         element.draggable({
-          // revert: true
-          containment: "parent"
+          revert: "invalid",
+          containment: "div.garden-container"
         });
       }
     };

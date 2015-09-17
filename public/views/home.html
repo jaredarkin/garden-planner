@@ -1,12 +1,13 @@
-<h2>List of Plants</h2>
+
 <div class="row">
   <div class="col-md-5" ng-controller="plantController as plantCtrl">
+    <h2>List of Plants</h2>
     <ul class="list-group">
       <li class="list-group-item" ng-repeat="plant in plantCtrl.plants">
         <span>{{plant.name}}</span>
-        <button ng-show="!showInfo" ng-click="showInfo = !showInfo">Show Info</button>
-        <button ng-show="showInfo" ng-click="showInfo = !showInfo">Hide Info</button>
-        <addbutton></addbutton>
+        <addbutton class="pull-right"></addbutton>
+        <button class="pull-right" ng-show="!showInfo" ng-click="showInfo = !showInfo">Show Info</button>
+        <button class="pull-right" ng-show="showInfo" ng-click="showInfo = !showInfo">Hide Info</button>
         <div class="plantInfo row" ng-show="showInfo">
           <div class="col-md-6">
             <p>Type: {{plant.type}}</p>
@@ -21,10 +22,14 @@
   </div>
 
   <div class="garden-container col-md-7" ng-controller="layoutController">
+    <h2>Your Garden</h2>
     Length: <input type="text" ng-model="userLength">
     Width: <input type="text" ng-model="userWidth">
 
     <div class="garden-layout" id="garden-layout" droppable>
+    </div>
+    <div class="compost" id="compost" droppable>
+      <p id="compost-tooltip" tooltip="Drag plants here to remove them from your garden.">Compost Bin</p>
     </div>
   </div>
 </div>

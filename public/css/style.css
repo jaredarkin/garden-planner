@@ -1,19 +1,61 @@
-body {
-  background-color: lemonchiffon;
+* {
+  box-sizing: border-box;
 }
 
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-image: url(http://babydreambackdrops.com/images/BeachHouseHorizontal.jpg);
+}
+
+header{
+  background-image: url(http://www.freewebheaders.com/wordpress/wp-content/gallery/tulips/tulips-and-flowers-garden-corrugated-color-stripes-web-header.jpg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  height: 12em;
+}
+
+h1{
+  color: white;
+  font-size: 4em;
+  text-align: center;
+  padding-top: .5em;
+  margin-top: 0;
+}
+
+div.container {
+  margin-bottom: 2em;
+}
+
+.plantInfo {
+  padding-top: 1em;
+}
+
+.compost {
+  height: 125px;
+  width: 125px;
+  border: 2px green solid;
+  margin-top: 2em;
+  text-align: center;
+}
+
+/* size will be determined by user input */
 .garden-layout {
   height: 240px;
   width: 480px;
-  border: 2px red solid;
+  border: 2px green solid;
+  margin-top: 1em;
+  background-image: url(http://www.neherpetoculture.com/images/pottingsoil.jpg);
 }
 
 /* layout image sizes based on plant spacing needs*/
+/* currently using inline styling; want to use classes */
 /* will convert to SASS function */
 .layout-image{
   border-radius: 50%;
-  /*height: 48px;
-  width: 48px;*/
 }
 .spacing18{
   height: 72px;
