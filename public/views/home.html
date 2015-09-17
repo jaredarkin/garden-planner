@@ -1,35 +1,36 @@
 
 <div class="row">
-  <div class="col-md-5" ng-controller="plantController as plantCtrl">
+  <div class="col-md-3" ng-controller="plantController as plantCtrl">
     <h2>List of Plants</h2>
     <ul class="list-group">
       <li class="list-group-item" ng-repeat="plant in plantCtrl.plants">
         <span>{{plant.name}}</span>
         <addbutton class="pull-right"></addbutton>
-        <button class="pull-right" ng-show="!showInfo" ng-click="showInfo = !showInfo">Show Info</button>
-        <button class="pull-right" ng-show="showInfo" ng-click="showInfo = !showInfo">Hide Info</button>
+        <button class="pull-right" ng-show="!showInfo" ng-click="showInfo = !showInfo">v</button>
+        <button class="pull-right" ng-show="showInfo" ng-click="showInfo = !showInfo">^</button>
         <div class="plantInfo row" ng-show="showInfo">
-          <div class="col-md-6">
+          <div class="col-md-8">
             <p>Type: {{plant.type}}</p>
             <p>Spacing: {{plant.spacing_min}} - {{plant.spacing_max}}</p>
             <p>Height: {{plant.height}}</p>
           </div>
-          <div class="col-md-6 thumbnail">
+          <div class="col-md-4 thumbnail">
             <img src="{{plant.photo_url}}" alt="{{plant.name}}" >
           </div>
       </li>
     </ul>
   </div>
 
-  <div class="garden-container col-md-7" ng-controller="layoutController">
+  <div class="garden-container col-md-9" ng-controller="layoutController">
     <h2>Your Garden</h2>
     Length: <input type="text" ng-model="userLength">
     Width: <input type="text" ng-model="userWidth">
-
-    <div class="garden-layout" id="garden-layout" droppable>
-    </div>
-    <div class="compost" id="compost" droppable>
-      <p id="compost-tooltip" tooltip="Drag plants here to remove them from your garden.">Compost Bin</p>
+    <div class="garden row">
+      <div class="garden-layout col-md-10" id="garden-layout" droppable>
+      </div>
+      <div class="compost col-md-2" id="compost" droppable>
+        <p id="compost-tooltip" tooltip="Drag plants here to remove them from your garden.">Compost Bin</p>
+      </div>
     </div>
   </div>
 </div>

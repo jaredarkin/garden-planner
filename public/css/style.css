@@ -35,17 +35,18 @@ div.container {
 }
 
 .compost {
-  height: 125px;
-  width: 125px;
+  height: 180px;
+  width: 150px;
   border: 2px green solid;
-  margin-top: 2em;
+  margin-top: 1em;
+  margin-left: .5em;
   text-align: center;
 }
 
 /* size will be determined by user input */
 .garden-layout {
-  height: 240px;
-  width: 480px;
+  height: 360px;
+  width: 720px;
   border: 2px green solid;
   margin-top: 1em;
   background-image: url(http://www.neherpetoculture.com/images/pottingsoil.jpg);

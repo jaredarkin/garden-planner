@@ -5,7 +5,7 @@
   directives.directive('addbutton', function(){
     return {
       restrict: 'E',
-      template: "<button addtogarden>Add to Garden</button>"
+      template: "<button addtogarden>+</button>"
     }
   });
 
@@ -14,7 +14,7 @@
   directives.directive('addtogarden', function($compile){
     return function(scope, element, attrs){
       element.bind("click", function(){
-        angular.element(document.getElementById('garden-layout')).append($compile('<img draggable height='+4*scope.plant.spacing_min+' width='+4*scope.plant.spacing_min+' class="layout-image" src=' + scope.plant.photo_url + ' />')(scope));
+        angular.element(document.getElementById('garden-layout')).append($compile('<img draggable height='+6*scope.plant.spacing_min+' width='+6*scope.plant.spacing_min+' class="layout-image" src=' + scope.plant.photo_url + ' />')(scope));
       });
     };
   });
@@ -36,7 +36,7 @@
       link: function(scope, element, attrs){
         element.draggable({
           revert: "invalid",
-          containment: "div.garden-container"
+          containment: "div.garden"
         });
       }
     };
