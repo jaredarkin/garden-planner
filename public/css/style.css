@@ -12,14 +12,13 @@ body {
 }
 
 header{
-  background-image: url(http://www.freewebheaders.com/wordpress/wp-content/gallery/tulips/tulips-and-flowers-garden-corrugated-color-stripes-web-header.jpg);
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
+  background-image: url(http://www.thorndongreen.co.nz/sites/default/files/header_article_vegs.jpg);
   height: 12em;
 }
 
 h1{
-  color: white;
+  color: #f0f0f0;
+  text-shadow: 1px 1px 1px #006633;
   font-size: 4em;
   text-align: center;
   padding-top: .5em;
@@ -37,10 +36,13 @@ div.container {
 .compost {
   height: 180px;
   width: 150px;
+  color: #f0f0f0;
   border: 2px green solid;
   margin-top: 1em;
   margin-left: .5em;
   text-align: center;
+  background-image: url(http://1v550a3jlx4d2lc773o373z5qn.wpengine.netdna-cdn.com/wp-content/uploads/2011/04/compost-bin.jpg);
+  background-size: 100% 100%;
 }
 
 /* size will be determined by user input */

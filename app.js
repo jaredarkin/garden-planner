@@ -1,9 +1,13 @@
 var express = require('express');
 var app = express();
 var path = require('path');
-var mongoose = require('mongoose');
+var mongodb = require('mongodb');
 var mongojs = require('mongojs');
 var db = mongojs('garden', ['plants'])
+// 
+// var uri = process.env.MONGOLAB_URI;
+// mongoURI = 'mongodb://localhost/test';
+// db.connect(process.env.MONGOLAB_URI || mongoURI);
 
 app.use("/", express.static(path.join(__dirname + "/public")));
 
