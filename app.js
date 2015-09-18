@@ -7,6 +7,7 @@ var mongoURI = process.env.MONGOLAB_URI;
 var localURI = 'mongodb://localhost/garden';
 var db = mongojs( mongoURI || localURI, ['plants']);
 
+
 app.use("/", express.static(path.join(__dirname + "/public")));
 
 app.get("/", function(request, response){
