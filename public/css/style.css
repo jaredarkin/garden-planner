@@ -25,6 +25,14 @@ h1{
   margin-top: 0;
 }
 
+h1, h2{
+  font-family: "Lobster", Georgia, Times, serif;
+}
+
+p, span {
+  font-family: 'Cabin', Helvetica, Arial, sans-serif;
+}
+
 div.container {
   margin-bottom: 2em;
 }
@@ -33,6 +41,7 @@ div.container {
   padding-top: 1em;
 }
 
+/* fixes bug with show/hide buttons */
 plant{
   display: block;
 }
@@ -61,29 +70,6 @@ plant{
   background-image: url(http://www.neherpetoculture.com/images/pottingsoil.jpg);
 }
 
-/* layout image sizes based on plant spacing needs*/
-/* currently using inline styling; want to use classes */
-/* will convert to SASS function */
 .layout-image{
   border-radius: 50%;
-}
-.spacing18{
-  height: 72px;
-  width: 72px;
-}
-.spacing12{
-  height: 48px;
-  width: 48px;
-}
-.spacing8{
-  height: 32px;
-  width: 32px;
-}
-.spacing6{
-  height: 24px;
-  width: 24px;
-}
-.spacing3{
-  height: 12px;
-  width: 12px;
 }
