@@ -33,6 +33,10 @@ div.container {
   padding-top: 1em;
 }
 
+plant{
+  display: block;
+}
+
 .compost {
   height: 180px;
   width: 150px;
@@ -49,6 +53,8 @@ div.container {
 .garden-layout {
   height: 360px;
   width: 720px;
+  padding-left: 0; /* removes bootstrap padding in garden area */
+  padding-right: 0;
   border: 2px green solid;
   margin-top: 1em;
   background-image: url(http://www.neherpetoculture.com/images/pottingsoil.jpg);

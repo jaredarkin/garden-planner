@@ -1,0 +1,14 @@
+<span>{{plant.name}}</span>
+<addbutton class="pull-right"></addbutton>
+<button class="pull-right" ng-show="!showInfo" ng-click="showInfo = !showInfo">v</button>
+<button class="pull-right" ng-show="showInfo" ng-click="showInfo = !showInfo">^</button>
+<div class="plantInfo row" ng-show="showInfo">
+  <div class="col-md-8">
+    <p>Type: {{plant.type}}</p>
+    <p>Spacing: {{plant.spacing_min}} - {{plant.spacing_max}}</p>
+    <p>Height: {{plant.height}}</p>
+  </div>
+  <div class="col-md-4 thumbnail">
+    <img src="{{plant.photo_url}}" alt="{{plant.name}}" >
+  </div>
+</div>

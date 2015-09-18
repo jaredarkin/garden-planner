@@ -11,6 +11,7 @@
 
   // directive to add plant image to garden
   // need to extract the style (resized height/width) into another directive and call with ng-style
+  // need to append to middle of div - if enough plants added, new plants added outside of garden
   directives.directive('addtogarden', function($compile){
     return function(scope, element, attrs){
       element.bind("click", function(){
@@ -18,6 +19,18 @@
       });
     };
   });
+
+  // directive for plant element
+  directives.directive('plant', [ 'Plant', function(){
+    return {
+      templateUrl: "views/_plant.html"
+    }
+  }]);
+
+  //directive for plant in garden element
+  directives.directive('gardenplant', [ 'plant',  function(){
+
+  }]);
 
   // directive to remove plant image from garden
   directives.directive('removefromgarden', function(){
@@ -28,6 +41,17 @@
 
   // directive to show remove button when image is clicked on
 
+  // directive to clear all plants from garden
+  directives.directive('clearbutton', [ function(){
+    return {
+      link: function(scope){
+        scope.clearGarden = function(){
+          angular.element(document.getElementById('garden-layout')).empty()
+        }
+      },
+      template: "<button ng-click='clearGarden()'>Clear Garden</button>"
+    }
+  }])
 
   // draggable directive for images in garden
   directives.directive('draggable', function(){

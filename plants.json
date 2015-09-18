@@ -1,8 +1,8 @@
-{ name: "Habanero, Hot Pepper", type: "pepper", spacing_min: 24, spacing_max: 36, height: "24-36 in", photo_url: "http://pics.davesgarden.com/pics/2003/06/23/Thaumaturgist/60d08f.jpg"}
-{ name: "King Arthur, Bell Pepper", type: "pepper", spacing_min: 18, spacing_max: 24, height: "24-36 in", photo_url: "http://pics.davesgarden.com/pics/2006/08/09/calibash/62b6c6.jpg"}
-{ name: "Garden Onion, Edible", type: "onion", spacing_min: 3, spacing_max: 6, height: "12-18 in", photo_url: "http://pics.davesgarden.com/pics/2011/08/02/growin/13ccbf.jpg"}
-{ name: "Celebrity Tomato", type: "tomato", spacing_min: 24, spacing_max: 36, height: "24-48 in", photo_url: "http://pics.davesgarden.com/pics/2004/12/30/ocimum_nate/ce0ac4.jpg"}
-{ name: "Fourth of July Tomato", type: "tomato", spacing_min: 15, spacing_max: 18, height: "24-36 in", photo_url: "http://pics.davesgarden.com/pics/2005/12/20/Sarahskeeper/577939.jpg"}
-{ name: "Flavorburst, Bell Pepper", type: "pepper", spacing_min: 18, spacing_max: 24, height: "18-36 in", photo_url: "http://pics.davesgarden.com/pics/2009/08/18/KSBaptisia/d0df57.jpg"}
-{ name: "Buttercrunch, Lettuce", type: "lettuce", spacing_min: 9, spacing_max: 12, height: "6-12 in", photo_url: "http://pics.davesgarden.com/pics/2005/05/26/Big_Red/c3f7f3.jpg"}
-{ name: "Basil, Sweet Basil", type: "herb", spacing_min: 9, spacing_max: 12, height: "12-18 in", photo_url: "http://pics.davesgarden.com/pics/2005/04/17/TuttiFrutti/f1b277.jpg"}
+{ "name": "Habanero, Hot Pepper", "type": "pepper", "spacing_min": "24", "spacing_max": "36", "height": "24-36 in", "photo_url": "http://pics.davesgarden.com/pics/2003/06/23/Thaumaturgist/60d08f.jpg"}
+{ "name": "King Arthur, Bell Pepper", "type": "pepper", "spacing_min": "18", "spacing_max": "24", "height": "24-36 in", "photo_url": "http://pics.davesgarden.com/pics/2006/08/09/calibash/62b6c6.jpg"}
+{ "name": "Garden Onion, Edible", "type": "onion", "spacing_min": "3", "spacing_max": "6", "height": "12-18 in", "photo_url": "http://pics.davesgarden.com/pics/2011/08/02/growin/13ccbf.jpg"}
+{ "name": "Celebrity Tomato", "type": "tomato", "spacing_min": "24", "spacing_max": "36", "height": "24-48 in", "photo_url": "http://pics.davesgarden.com/pics/2004/12/30/ocimum_nate/ce0ac4.jpg"}
+{ "name": "Fourth of July Tomato", "type": "tomato", "spacing_min": "15", "spacing_max": "18", "height": "24-36 in", "photo_url": "http://pics.davesgarden.com/pics/2005/12/20/Sarahskeeper/577939.jpg"}
+{ "name": "Flavorburst, Bell Pepper", "type": "pepper", "spacing_min": "18", "spacing_max": "24", "height": "18-36 in", "photo_url": "http://pics.davesgarden.com/pics/2009/08/18/KSBaptisia/d0df57.jpg"}
+{ "name": "Buttercrunch, Lettuce", "type": "lettuce", "spacing_min": "9", "spacing_max": "12", "height": "6-12 in", "photo_url": "http://pics.davesgarden.com/pics/2005/05/26/Big_Red/c3f7f3.jpg"}
+{ "name": "Basil, Sweet Basil", "type": "herb", "spacing_min": "9", "spacing_max": "12", "height": "12-18 in", "photo_url": "http://pics.davesgarden.com/pics/2005/04/17/TuttiFrutti/f1b277.jpg"}
