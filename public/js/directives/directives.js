@@ -1,6 +1,9 @@
 (function(){
   var directives = angular.module("directives", ['ngRoute']);
 
+  // activate tooltips 
+  $('[data-toggle="tooltip"]').tooltip();
+
   //  directive to create add to garden button
   directives.directive('addbutton', function(){
     return {
@@ -49,7 +52,7 @@
           angular.element(document.getElementById('garden-layout')).empty()
         }
       },
-      template: "<button ng-click='clearGarden()'>Clear Garden</button>"
+      template: "<button id='clearAllButton' ng-click='clearGarden()'>Clear Garden</button>"
     }
   }])
 
