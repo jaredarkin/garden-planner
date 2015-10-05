@@ -5,7 +5,7 @@ var mongodb = require('mongodb');
 var mongojs = require('mongojs');
 var mongoURI = process.env.MONGOLAB_URI;
 var localURI = 'mongodb://localhost/garden';
-var db = mongojs( mongoURI || localURI, ['plants']);
+var db = mongojs( mongoURI || localURI, ['plants'], {authMechanism: 'ScramSHA1'});
 
 
 app.use("/", express.static(path.join(__dirname + "/public")));
