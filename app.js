@@ -16,7 +16,7 @@ app.get("/", function(request, response){
 
 app.get("/plants", function(req,res){
  db.plants.find({}, function(err, plants){
-   if(err) return;
+   if(err) console.log(err) ;
    var response = plants;
    res.json(response);
  });
