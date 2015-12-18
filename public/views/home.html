@@ -21,7 +21,13 @@
       <div class="compost col-md-2">
         <p id="compost-headline" data-toggle="tooltip" title="Drag plants here to remove them from your garden.">Compost Bin</p>
         <div id="compost" droppable></div>
-        <div class="clear-div" clearbutton></div>
+        <div class="clear-div">
+          <button ng-click="showClearModal = !showClearModal" class="btn btn-default">Clear Garden</button>
+          <modal title="Confirm Clear Garden" ng-show="showClearModal">
+            <p>Are you sure you want to clear your garden?</p>
+            <clearbutton></clearbutton>
+          </modal>
+        </div>
       </div>
     </div>
   </div>

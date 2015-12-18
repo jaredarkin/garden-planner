@@ -3,7 +3,8 @@
 
   layoutControllers.controller('layoutController', [ function($scope){
     this.setLayout = function(){
-      
-    }
+
+    };
   }])
+
 })()
