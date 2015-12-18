@@ -1,8 +1,15 @@
 (function(){
   var directives = angular.module("directives", ['ngRoute']);
 
-  // activate tooltips 
+  // activate tooltips
   $('[data-toggle="tooltip"]').tooltip();
+
+  // directive to set size of garden
+  directives.directive('garden', function(){
+    return {
+    
+    }
+  })
 
   //  directive to create add to garden button
   directives.directive('addbutton', function(){

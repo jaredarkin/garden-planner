@@ -65,8 +65,8 @@ plant{
 
 /* size will be determined by user input */
 .garden-layout {
-  height: 360px;
-  width: 720px;
+  /*height: 360px;*/
+  /*width: 720px;*/
   padding-left: 0; /* removes bootstrap padding in garden area */
   padding-right: 0;
   border: 2px green solid;
