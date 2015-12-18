@@ -2,8 +2,9 @@
 <div class="row">
   <div class="col-md-3" ng-controller="plantController as plantCtrl">
     <h2>List of Plants</h2>
+    Search: <input ng-model="query">
     <ul class="list-group">
-      <li class="list-group-item" ng-repeat="plant in plantCtrl.plants">
+      <li class="list-group-item" ng-repeat="plant in plantCtrl.plants | filter: query">
         <plant></plant>
       </li>
     </ul>
@@ -15,7 +16,7 @@
     <p>Width: <input type="text" ng-model="userWidth"></p>
     <p>Dimensions: {{userLength}} X {{userWidth}}</p>
     <div class="garden row">
-      <div class="garden-layout col-md-10" id="garden-layout" droppable ng-style="{height: userLength*40, width: userWidth*40}">
+      <div class="garden-layout col-md-10" id="garden-layout" droppable ng-style="{height: userLength*40 || 500, width: userWidth*40 || 500}">
       </div>
       <div class="compost col-md-2">
         <p id="compost-headline" data-toggle="tooltip" title="Drag plants here to remove them from your garden.">Compost Bin</p>
