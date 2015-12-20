@@ -51,6 +51,19 @@
 
   // directive to show remove button when image is clicked on
 
+  // directive to show modal to confirm clear garden
+  directives.directive('modalClear', function(){
+    return {
+      restrict: 'E',
+      scope: {
+        show: '='
+      },
+      replace: true, // replace with template below
+      transclude: true, // to insert custom content into directive
+
+    }
+  })
+
   // directive to clear all plants from garden
   directives.directive('clearbutton', [ function(){
     return {
