@@ -70,10 +70,9 @@
       link: function(scope){
         scope.clearGarden = function(){
           angular.element(document.getElementById('garden-layout')).empty();
-          scope.showClearModal = !scope.showClearModal;
         }
       },
-      template: "<button id='clearAllButton' ng-click='clearGarden()' class='btn btn-default'>Confirm Clear</button>"
+      template: "<button id='clearAllButton' ng-click='clearGarden()' class='btn btn-warning'>Confirm Clear</button>"
     }
   }])
 

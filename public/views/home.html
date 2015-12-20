@@ -3,31 +3,18 @@
   <div class="col-md-3" ng-controller="plantController as plantCtrl">
     <h2>List of Plants</h2>
     Search: <input ng-model="query">
-    <div ng-controller="angularuiController as uiCtrl">
-      <!-- <script type="text/ng-template" id="group-template.html">
-        <div class="panel {{panelClass || 'panel-default'}}">
-          <div class="panel-heading">
-            <h4 class="panel-title" style="color:#fa39c3">
-              <a href tabindex="0" class="accordion-toggle" ng-click="toggleOpen()" uib-accordion-transclude="heading"><span
-                ng-class="{'text-muted': isDisabled}">{{heading}}</span></a>
-            </h4>
-          </div>
-          <div class="panel-collapse collapse" uib-collapse="!isOpen">
-            <div class="panel-body" style="text-align: right" ng-transclude></div>
-          </div>
-        </div>
-      </script> -->
-
-    <div class="checkbox">
-      <label>
-        <input type="checkbox" ng-model="oneAtATime">
-        View one plant at a time
-      </label>
-    </div>
-    <uib-accordion close-others="oneAtATime">
-      <uib-accordion-group ng-repeat="plant in plantCtrl.plants | filter: query">
-        <plant></plant>
-      </uib-accordion-group>
+    <div ng-controller="accordionController">
+      <div class="checkbox">
+        <label>
+          <input type="checkbox" ng-model="oneAtATime">
+          View one plant at a time
+        </label>
+      </div>
+      <uib-accordion close-others="oneAtATime">
+        <uib-accordion-group ng-repeat="plant in plantCtrl.plants | filter: query">
+          <plant></plant>
+        </uib-accordion-group>
+      </uib-accordion>
     </div>
   </div>
 
@@ -42,13 +29,20 @@
       <div class="compost col-md-2">
         <p id="compost-headline" data-toggle="tooltip" title="Drag plants here to remove them from your garden.">Compost Bin</p>
         <div id="compost" droppable></div>
-        <div class="clear-div">
-          <button ng-click="showClearModal = !showClearModal" class="btn btn-default">Clear Garden</button>
-          <modal-clear>
-            <p>Are you sure you want to clear your garden?</p>
-            <clearbutton></clearbutton>
-          </modal-clear>
+
+        <div class="clear-div" ng-controller="clearModalController">
+          <script type="text/ng-template" id="clearModalContent.html">
+            <div class="modal-header">
+              <h3 class="modal-title">Are you sure you want to clear the garden?</h3>
+            </div>
+            <div class="modal-body">
+              <button class="btn btn-warning" type="button" ng-click="ok()">Clear Garden</button>
+              <button class="btn btn-default" type="button" ng-click="cancel()">Cancel</button>
+            </div>
+          </script>
+          <button ng-click="open()" class="btn btn-default">Clear Garden</button>
         </div>
+
       </div>
     </div>
   </div>
