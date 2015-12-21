@@ -13,7 +13,25 @@ body {
 
 header{
   background-image: url(http://www.thorndongreen.co.nz/sites/default/files/header_article_vegs.jpg);
-  height: 12em;
+  height: 10em;
+}
+
+.heading-container {
+  border-bottom: .2em black solid;
+  padding-top: .5em;
+}
+
+.garden-options p {
+  display: inline;
+}
+
+#submitOptionsButton {
+  margin-top: .5em;
+  margin-bottom: .5em;
+}
+
+#clearGardenButton {
+  margin-top: 2.5em;
 }
 
 h1{

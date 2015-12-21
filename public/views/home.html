@@ -1,5 +1,44 @@
 
 <div class="row">
+  <div class="heading-container col-md-12">
+    <div class="login-section col-md-3">
+      <!-- add login modal with username/password
+      guest will change based on username -->
+      <h3>Welcome Guest</h3>
+      <p>Users coming soon!</p>
+      <button class="btn btn-default">Login</button>
+      <button class="btn btn-default">Sign Up</button>
+    </div>
+    <div class="garden-options col-md-7">
+      <!-- add submit button after options to save to database -->
+      <h4>Garden Options</h4>
+      <p>Name: <input type="text" ng-model="gardenName"></p>
+      <p>Length: <input type="text" ng-model="userLength"></p>
+      <p>Width: <input type="text" ng-model="userWidth"></p>
+      <!-- <button class="btn btn-default" id="submitOptionsButton">Submit</button> -->
+    </div>
+    <div class="clear-div col-md-2" ng-controller="clearModalController">
+      <!-- possibly use this template for delete garden modal
+      with multiple options (clear/delete) based on argument passed
+      into uibmodal.open() -->
+      <script type="text/ng-template" id="clearModalContent.html">
+        <div class="modal-header">
+          <h3 class="modal-title">Are you sure you want to clear the garden?</h3>
+        </div>
+        <div class="modal-body">
+          <button class="btn btn-warning" type="button" ng-click="ok()">Clear Garden</button>
+          <button class="btn btn-default" type="button" ng-click="cancel()">Cancel</button>
+        </div>
+      </script>
+      <button ng-click="open()" class="btn btn-default" id="clearGardenButton">Clear Garden</button>
+      <!-- add delete garden button after users can save multiple layouts
+      <button class="btn btn-default">Delete Garden</button> -->
+
+    </div>
+  </div>
+</div>
+
+<div class="row">
   <div class="col-md-3" ng-controller="plantController as plantCtrl">
     <h2>List of Plants</h2>
     Search: <input ng-model="query">
@@ -17,34 +56,10 @@
       </uib-accordion>
     </div>
   </div>
-
   <div class="garden-container col-md-9" ng-controller="layoutController">
-    <h2>Your Garden</h2>
-    <p>Length: <input type="text" ng-model="userLength"></p>
-    <p>Width: <input type="text" ng-model="userWidth"></p>
+    <h2>Your Garden: {{gardenName}}</h2>
     <div class="garden row">
-      <div class="garden-layout col-md-10" id="garden-layout" droppable ng-style="{height: userWidth*36 || 360, width: userLength*36 || 720}">
-      </div>
-      <div class="compost col-md-2">
-        <p id="compost-headline" data-toggle="tooltip" title="Drag plants here to remove them from your garden.">Compost Bin</p>
-        <div id="compost" droppable></div>
-
-        <div class="clear-div" ng-controller="clearModalController">
-          <!-- possibly use this template for delete garden modal
-          with multiple options (clear/delete) based on argument passed
-          into uibmodal.open() -->
-          <script type="text/ng-template" id="clearModalContent.html">
-            <div class="modal-header">
-              <h3 class="modal-title">Are you sure you want to clear the garden?</h3>
-            </div>
-            <div class="modal-body">
-              <button class="btn btn-warning" type="button" ng-click="ok()">Clear Garden</button>
-              <button class="btn btn-default" type="button" ng-click="cancel()">Cancel</button>
-            </div>
-          </script>
-          <button ng-click="open()" class="btn btn-default">Clear Garden</button>
-        </div>
-
+      <div class="garden-layout col-md-12" id="garden-layout" droppable ng-style="{height: userWidth*36 || 360, width: userLength*36 || 720}">
       </div>
     </div>
   </div>
