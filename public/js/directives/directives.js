@@ -4,13 +4,6 @@
   // activate tooltips
   $('[data-toggle="tooltip"]').tooltip();
 
-  // directive to set size of garden
-  directives.directive('garden', function(){
-    return {
-
-    }
-  })
-
   //  directive to create add to garden button
   directives.directive('addbutton', function(){
     return {
@@ -25,7 +18,8 @@
   directives.directive('addtogarden', function($compile){
     return function(scope, element, attrs){
       element.bind("click", function(){
-        angular.element(document.getElementById('garden-layout')).append($compile('<img draggable height='+6*scope.plant.spacing_min+' width='+6*scope.plant.spacing_min+' class="layout-image" ng-src=' + scope.plant.photo_url + ' />')(scope));
+        angular.element(document.getElementById('garden-layout')).append($compile(
+          '<img ng-controller="gardenPlantPopoverController" draggable uib-popover-template="gardenPlantPopover.templateUrl" popover-is-open="gardenPlantPopover.isOpen" height='+6*scope.plant.spacing_min+' width='+6*scope.plant.spacing_min+' class="layout-image" ng-src=' + scope.plant.photo_url + ' />')(scope));
       });
     };
   });
@@ -33,12 +27,13 @@
   // directive for plant element
   directives.directive('plant', [ 'Plant', function(){
     return {
-      templateUrl: "views/_plant.html"
+      templateUrl: "views/_plant.html",
+      restrict: 'E'
     }
   }]);
 
   //directive for plant in garden element
-  directives.directive('gardenplant', [ 'plant',  function(){
+  directives.directive('gardenPlant', [ 'Plant',  function(){
 
   }]);
 
@@ -49,32 +44,7 @@
     }
   })
 
-  // directive to show remove button when image is clicked on
-
-  // directive to show modal to confirm clear garden
-  directives.directive('modalClear', function(){
-    return {
-      restrict: 'E',
-      scope: {
-        show: '='
-      },
-      replace: true, // replace with template below
-      transclude: true, // to insert custom content into directive
-
-    }
-  })
-
-  // directive to clear all plants from garden
-  directives.directive('clearbutton', [ function(){
-    return {
-      link: function(scope){
-        scope.clearGarden = function(){
-          angular.element(document.getElementById('garden-layout')).empty();
-        }
-      },
-      template: "<button id='clearAllButton' ng-click='clearGarden()' class='btn btn-warning'>Confirm Clear</button>"
-    }
-  }])
+  // directive to show popover with plant name and remove button when image is clicked on
 
   // draggable directive for images in garden
   directives.directive('draggable', function(){

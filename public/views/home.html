@@ -22,15 +22,17 @@
     <h2>Your Garden</h2>
     <p>Length: <input type="text" ng-model="userLength"></p>
     <p>Width: <input type="text" ng-model="userWidth"></p>
-    <p>Dimensions: {{userLength}} X {{userWidth}}</p>
     <div class="garden row">
-      <div class="garden-layout col-md-10" id="garden-layout" droppable ng-style="{height: userLength*40 || 500, width: userWidth*40 || 500}">
+      <div class="garden-layout col-md-10" id="garden-layout" droppable ng-style="{height: userWidth*36 || 360, width: userLength*36 || 720}">
       </div>
       <div class="compost col-md-2">
         <p id="compost-headline" data-toggle="tooltip" title="Drag plants here to remove them from your garden.">Compost Bin</p>
         <div id="compost" droppable></div>
 
         <div class="clear-div" ng-controller="clearModalController">
+          <!-- possibly use this template for delete garden modal
+          with multiple options (clear/delete) based on argument passed
+          into uibmodal.open() -->
           <script type="text/ng-template" id="clearModalContent.html">
             <div class="modal-header">
               <h3 class="modal-title">Are you sure you want to clear the garden?</h3>

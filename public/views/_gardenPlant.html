@@ -1,0 +1,12 @@
+<!-- <div ng-controller="gardenPlantPopoverController">
+  <img draggable height='+6*scope.plant.spacing_min+' width='+6*scope.plant.spacing_min+' class="layout-image" ng-src=' + scope.plant.photo_url + ' uib-popover-template="dynamicPopover.templateUrl" />
+</div>
+
+<script type="text/ng-template" id="gardenPlantPopoverTemplate.html">
+  <div>Plant Name</div>
+  <button class="btn btn-default">Remove</button>
+</script> -->
+
+<div>{{plant.name}}</div>
+<button class="btn btn-warning" ng-click="gardenPlantPopover.remove()">Remove</button>
+<button class="btn btn-default" ng-click="gardenPlantPopover.close()">Cancel</button>

@@ -6,4 +6,8 @@
     this.plants = Plant.query();
   }]);
 
+  plantControllers.controller('gardenPlantController', ['plant', function(plant){
+    
+  }])
+
 })()

@@ -27,4 +27,17 @@
     };
   });
 
+  angularuiControllers.controller('gardenPlantPopoverController', function ($scope) {
+    $scope.gardenPlantPopover = {
+      templateUrl: 'views/_gardenPlant.html',
+      isOpen: false,
+      close: function() {
+        $scope.gardenPlantPopover.isOpen = false;
+      },
+      remove: function(element){
+        $("element").parent.remove();
+      }
+    };
+  });
+
 })()
