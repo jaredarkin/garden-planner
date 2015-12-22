@@ -82,6 +82,7 @@ plant{
 .garden-layout {
   /*height: 360px;*/
   /*width: 720px;*/
+  position: relative;
   padding-left: 0; /* removes bootstrap padding in garden area */
   padding-right: 0;
   border: 2px green solid;

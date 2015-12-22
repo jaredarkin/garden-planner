@@ -19,7 +19,7 @@
     return function(scope, element, attrs){
       element.bind("click", function(){
         angular.element(document.getElementById('garden-layout')).append($compile(
-          '<img ng-controller="gardenPlantPopoverController" draggable uib-popover-template="gardenPlantPopover.templateUrl" popover-is-open="gardenPlantPopover.isOpen" ng-click="gardenPlantPopover.click()" popover-trigger="none" height='+6*scope.plant.spacing_min+' width='+6*scope.plant.spacing_min+' class="layout-image" ng-src=' + scope.plant.photo_url + ' />')(scope));
+          '<img ng-controller="gardenPlantPopoverController" draggable uib-popover-template="gardenPlantPopover.templateUrl" popover-is-open="gardenPlantPopover.isOpen" ng-click="gardenPlantPopover.click()" popover-trigger="none" height='+6*scope.plant.spacing_min+' width='+6*scope.plant.spacing_min+' class="layout-image" style="position: absolute; left: 10px; top: 100px;" ng-src=' + scope.plant.photo_url + ' />')(scope));
       });
     };
   });
