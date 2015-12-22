@@ -31,11 +31,17 @@
     $scope.gardenPlantPopover = {
       templateUrl: 'views/_gardenPlant.html',
       isOpen: false,
+      something: null,
+      click: function(){
+        this.isOpen=!this.isOpen;
+        this.something = event.target;
+      },
       close: function() {
         $scope.gardenPlantPopover.isOpen = false;
       },
       remove: function(element){
-        $("element").parent.remove();
+        this.something.remove();
+        $scope.gardenPlantPopover.isOpen = false;
       }
     };
   });

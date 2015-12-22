@@ -7,7 +7,6 @@
     'plantControllers',
     'plantServices',
     'plantRouter',
-    'layoutControllers',
     'angularuiControllers',
     'directives',
     'ui.bootstrap'

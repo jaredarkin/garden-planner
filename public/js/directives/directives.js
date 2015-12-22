@@ -19,7 +19,7 @@
     return function(scope, element, attrs){
       element.bind("click", function(){
         angular.element(document.getElementById('garden-layout')).append($compile(
-          '<img ng-controller="gardenPlantPopoverController" draggable uib-popover-template="gardenPlantPopover.templateUrl" popover-is-open="gardenPlantPopover.isOpen" height='+6*scope.plant.spacing_min+' width='+6*scope.plant.spacing_min+' class="layout-image" ng-src=' + scope.plant.photo_url + ' />')(scope));
+          '<img ng-controller="gardenPlantPopoverController" draggable uib-popover-template="gardenPlantPopover.templateUrl" popover-is-open="gardenPlantPopover.isOpen" ng-click="gardenPlantPopover.click()" popover-trigger="none" height='+6*scope.plant.spacing_min+' width='+6*scope.plant.spacing_min+' class="layout-image" ng-src=' + scope.plant.photo_url + ' />')(scope));
       });
     };
   });
@@ -45,6 +45,15 @@
   })
 
   // directive to show popover with plant name and remove button when image is clicked on
+  directives.directive('openPopover', function(event){
+    return function(scope, element, attrs) {
+      element.bind("click", function(){
+        event.stopPropagation();
+        gardenPlantPopover.isOpen=!gardenPlantPopover.isOpen;
+        var element = $(event.target);
+      })
+    }
+  })
 
   // draggable directive for images in garden
   directives.directive('draggable', function(){
@@ -53,7 +62,7 @@
       link: function(scope, element, attrs){
         element.draggable({
           revert: "invalid",
-          containment: "div.garden"
+          containment: "div.garden-layout"
         });
       }
     };

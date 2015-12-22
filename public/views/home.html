@@ -56,11 +56,9 @@
       </uib-accordion>
     </div>
   </div>
-  <div class="garden-container col-md-9" ng-controller="layoutController">
+  <div class="garden-container col-md-9" >
     <h2>Your Garden: {{gardenName}}</h2>
-    <div class="garden row">
-      <div class="garden-layout col-md-12" id="garden-layout" droppable ng-style="{height: userWidth*36 || 360, width: userLength*36 || 720}">
-      </div>
+    <div class="garden-layout" id="garden-layout" droppable ng-style="{height: userWidth*36 || 360, width: userLength*36 || 720}">
     </div>
   </div>
 </div>
