@@ -31,16 +31,16 @@
     $scope.gardenPlantPopover = {
       templateUrl: 'views/_gardenPlant.html',
       isOpen: false,
-      something: null,
+      plantClicked: null,
       click: function(){
         this.isOpen=!this.isOpen;
-        this.something = event.target;
+        this.plantClicked = event.target;
       },
       close: function() {
         $scope.gardenPlantPopover.isOpen = false;
       },
       remove: function(element){
-        this.something.remove();
+        this.plantClicked.remove();
         $scope.gardenPlantPopover.isOpen = false;
       }
     };
